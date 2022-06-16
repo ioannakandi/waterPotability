@@ -5,17 +5,18 @@ Created on Sun Jun  5 12:26:47 2022
 @author: Ioanna Kandi & Kostis Mavrogiorgos 
 """
 #import libraries 
+
 from keras.models import Sequential
 from keras.layers import Dense
 import numpy as np
 import pandas as pd
-from flask import Flask, request, Response
+from flask import Flask, render_template, request, Response
 from flask_cors import CORS, cross_origin
 
 # App config.
 app = Flask(__name__, static_url_path='',
-            static_folder='templates\classimax-premium',
-            template_folder='templates\classimax-premium')
+            static_folder='templates',
+            template_folder='templates')
 DEBUG = True
 app.config.from_object(__name__)
 app.config['SECRET_KEY'] = '7d441f27d441f27567d441f2b6176a'
@@ -23,6 +24,14 @@ CORS(app)
 
 #those are dummy parameters to perform tests ph = 1 hardness = 1 solids = 1 chloramines= 1 
 #sulfate = 1 conductivity = 1 organic_carbon = 1 trihalomethanes = 1 turbidity = 1 
+
+#endpoint for main page (index) display
+@app.route("/", methods=['GET','POST'] )
+@cross_origin()
+def home():
+    return render_template ("index.html")
+
+
 
 # endpoint for predicting the water potability
 @app.route("/predictPotability",methods=['GET', 'POST'])
@@ -90,7 +99,7 @@ def predictPotability():
         #that the water is potable
         if "0" in prediction_result:
             #print("This water is not potable.")
-            return Response('{"message":"Based on Neural Networks ML algorithm, this water is not potable."}', status=200, mimetype="application/json")
+            return Response('{"message":"Based on Neural Networks ML algorithm, this water is not potable."}', status=500, mimetype="application/json")
         elif "1" in prediction_result:
             #print("This water is potable.")
             return Response('{"message":"Based on Neural Networks ML algorithm, this water is potable."}', status=200, mimetype="application/json")

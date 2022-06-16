@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Wa.Po. - Pure Excellence</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+
+      
+.hero-image { background-image: linear-gradient(rgba(193, 198, 208, 0.5), rgba(119, 139, 172, 0.5)), url("water.jpg"); opacity: 0.9;
+
+  /* Set a specific height */
+  height: 100%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  }
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  }
+
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+.row.content {height: 700px}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  background-color: #f1f1f1;
+  height: 100%;
+}
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body style="background-image: linear-gradient(rgb(233, 241, 253), rgb(152, 178, 221 )) ;">
+
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-6 sidenav">
+      <div class="hero-image">
+        <div class="hero-text" style="color:black" >
+          <h1> <b>Wa.Po. </b> </h1>
+          <h3><b>An easy way to find out whether water is potable or not</b></h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6" >
+      
+      <form style="width:90%; margin:auto; margin-top: 20%;" id="predictionForm">
+        <h4 class="h2-responsive" style="text-align:center;">Is your water potable?</h4>
+      
+        <br><br>
+
+        <div class="row centerAccountSettings text-center justify-content-center">
+            <div class=" justify-content-center" style="width:80%; margin:auto;">
+
+
+
+              <div class="form-group row ">
+                <div class="col-sm-6">
+                    <label for="new_username" >pH </label>
+                    <input type="number"  class="form-control" id="ph" name="ph" placeholder="ph" required >
+                </div>
+              
+
+              
+                <div class="col-sm-6">
+                  <label for="firstname">Hardness</label>
+                  <input type="number" class="form-control" id="hardness" name="hardness" placeholder="hardness" required >
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-sm-6">
+                  <label for="lastname">Solids </label>
+                  <input type="number" class="form-control" id="solids" name="solids" placeholder="solids" required >
+                </div>
+         
+
+              <div class="col-sm-6">
+                <label for="email">Chloramines</label>
+                <input type="number" class="form-control" id="chloramines" name="chloramines" placeholder="chloramines" required >
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-sm-6">
+                <label for="password">Sulfate</label>
+                <input type="number" class="form-control" id="sulfate" name="sulfate" placeholder="sulfate" required >
+              </div>
+            
+
+            <div class="col-sm-6">
+              <label for="password">Conductivity</label>
+              <input type="number" class="form-control" id="conductivity" name="conductivity" placeholder="conductivity" required >
+            </div>
+          </div>
+          
+          <div class="form-group row">
+            <div class="col-sm-4">
+              <label for="password">Organic Carbon</label>
+              <input type="number" class="form-control" id="organic_carbon" name="organic_carbon" placeholder="organic_carbon" required >
+            </div>
+          
+
+          <div class="col-sm-4">
+            <label for="password">Trihalomethanes</label>
+            <input type="number" class="form-control" id="trihalomethanes" name="trihalomethanes" placeholder="trihalomethanes" required >
+          </div>
+        
+
+          <div class="col-sm-4">
+            <label for="password">Turbidity</label>
+            <input type="number" class="form-control" id="turbidity" name="turbidity" placeholder="turbidity" required >
+          </div>
+        </div>
+
+          </div>
+        </div>
+
+
+
+      <div class="col text-center">
+        <button id ="predict" type="submit" style="margin: auto;" class="btn btn-primary px-4 ">Run Test</button>
+      </div>
+
+
+      </div>
+    </div>
+      
+      
+
+     
+      
+  </div>
+</div>
+
+<!--============================
+=            Footer            =
+=============================-->
+
+<!-- Footer Bottom -->
+<footer class="footer-bottom" style="background-color: ghostwhite " >
+  <!-- Container Start -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-12">
+        <!-- Copyright -->
+        <div class="copyright" style="text-align:center" >
+          <p style="color:#375FA1;">Copyright © <script>
+              var CurrentYear = new Date().getFullYear()
+              document.write(CurrentYear)
+            </script>, Ioanna Kandi & Kostis Mavrogiorgos</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Container End -->
+  <!-- To Top -->
+  <div class="top-to">
+    <a id="top" class="" href="#"><i class="fa fa-angle-up"></i></a>
+  </div>
+</footer>
+
+<!-- Modal for YAS POTABILITY-->
+<div class="modal fade" id="yesPotable" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">This water sample is potable. Drink Away!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       Press "Continue" to examine another sample.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="window.location.href = 'http://localhost:5000';">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for NO POTABILITY-->
+<div class="modal fade" id="noPotable" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Unfortunately, this water sample is not potable. Be careful.</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Press "Continue" to examine another sample.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="window.location.href = 'http://localhost:5000';">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+
+$("#predictionForm").submit(function(e) {
+      //prevent Default functionality
+      e.preventDefault();
+      //get the fields of the form based on the id
+      let ph = $("#ph").val();
+      let hardness = $("#hardness").val();
+      let solids = $("#solids").val();
+      let chloramines = $("#chloramines").val();
+      let sulfate = $("#sulfate").val();
+      let conductivity = $("#conductivity").val();
+      let organic_carbon = $("#organic_carbon").val();
+      let trihalomethanes = $("#trihalomethanes").val();
+      let turbidity = $("#turbidity").val();
+     
+      //make the request to the back-end (it's a GET request, just like anything else we will use)
+        $.get(
+          "http://localhost:5000/predictPotability",
+          {
+            ph:ph,
+            hardness:hardness,
+            solids:solids,
+            chloramines:chloramines,
+            sulfate:sulfate,
+            conductivity:conductivity,
+            organic_carbon:organic_carbon,
+            trihalomethanes:trihalomethanes,
+            turbidity:turbidity,
+            
+          })
+          .done(function (response) {
+           $("#yesPotable").modal("show");
+
+		
+
+          })
+          .fail(function (response) {
+            //if the response status is 500 (meaning that something is wrong), the following will be executed
+            //it just shows an alert with the response from the back-end
+            $("#noPotable").modal("show");
+          });
+});
+
+</script>
+
+</body>
+</html>
