@@ -5,6 +5,3 @@ numpy
 pandas
 keras
 tensorflow
-
-
-
