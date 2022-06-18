@@ -10,13 +10,14 @@
   <style>
 
       
-.hero-image { background-image: linear-gradient(rgba(193, 198, 208, 0.5), rgba(119, 139, 172, 0.5)), url("water.jpg"); opacity: 0.9;
+.hero-image { background-image: linear-gradient(rgba(193, 198, 208, 0.5 ), rgba(119, 139, 172, 0.5)), url("water2.jpg"); opacity: 1;
 
   /* Set a specific height */
   height: 100%;
+  
 
   /* Position and center the image to scale nicely on all screens */
-  background-position: center;
+  background-position: inherit;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -29,7 +30,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: rgb(174, 238, 174);
   }
 
     /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
@@ -37,15 +38,15 @@
 
 /* Set gray background color and 100% height */
 .sidenav {
-  background-color: #f1f1f1;
-  height: 100%;
+  /*background-color: #f1f1f1;*/
+  height: 100%; 
 }
     
     /* Set black background color, white text and some padding */
     footer {
       background-color: #555;
       color: white;
-      padding: 15px;
+      padding: 30px;
     }
     
     /* On small screens, set height to 'auto' for sidenav and grid */
@@ -58,14 +59,14 @@
     }
   </style>
 </head>
-<body style="background-image: linear-gradient(rgb(233, 241, 253), rgb(152, 178, 221 )) ;">
+<body style="background-image: linear-gradient(#D1D9E1, #8399B6) ;">
 
 
 <div class="container-fluid">
   <div class="row content">
-    <div class="col-sm-6 sidenav">
-      <div class="hero-image">
-        <div class="hero-text" style="color:black" >
+    <div class="col-sm-6 sidenav" >
+      <div class="hero-image" id="heroImage">
+        <div class="hero-text" style="color: white;  " >
           <h1> <b>Wa.Po. </b> </h1>
           <h3><b>An easy way to find out whether water is potable or not</b></h3>
         </div>
@@ -152,28 +153,60 @@
         <button id ="predict" type="submit" style="margin: auto;" class="btn btn-primary px-4 ">Run Test</button>
       </div>
 
+    </form>
 
       </div>
     </div>
       
-      
-
-     
+  
       
   </div>
 </div>
 
+   
+<br> 
+
+
+  
 <!--============================
 =            Footer            =
 =============================-->
 
 <!-- Footer Bottom -->
-<footer class="footer-bottom" style="background-color: ghostwhite " >
-  <!-- Container Start -->
+<footer class="footer-bottom" style="background-image: linear-gradient(#A2B2C7,#f5f9ff); " >
+
   <div class="container">
     <div class="row">
-      <div class="col-sm-12 col-12">
+      <div class="col-sm-4 rounded" >
+        <iframe frameborder='0' id='widget-frame' lang='en' 
+        scrolling='yes' src='https://environment.data.gov.uk/bwq/widget/widget/widget2?ds=http://data.ordnancesurvey.co.uk/id/7000000000011105&amp;history=2&amp;se=1&amp;width-100=true' 
+        style='width:100%;height:300px;' title='edit.title' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'></iframe>
+      </div>   
+
+      <div class="col-sm-4">
+        <a class="twitter-timeline" data-width="400" data-height="300"
+        href="https://twitter.com/Water?ref_src=twsrc%5Etfw">Tweets by Water</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div> 
+    
+      <div class="col-sm-4">
+        <iframe
+        src="//www.epa.gov/sites/production/files/widgets/mywaterway/index.html"
+        id="mywaterway" style='width:80%;height:300px;' title="How's My Waterway Widget"
+        scrolling="yno" frameborder="0">
+        </iframe>
+      </div>
+    </div> 
+  </div>
+</div>
+
+  
+
+
+  <!-- Container Start -->
+    <div class="row" >
+      <div class="col-sm-12 col-12" >
         <!-- Copyright -->
+        <br> <br>
         <div class="copyright" style="text-align:center" >
           <p style="color:#375FA1;">Copyright © <script>
               var CurrentYear = new Date().getFullYear()
@@ -182,7 +215,7 @@
         </div>
       </div>
     </div>
-  </div>
+  
   <!-- Container End -->
   <!-- To Top -->
   <div class="top-to">
@@ -195,14 +228,15 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">This water sample is potable. Drink Away!</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h4 class="modal-title" id="exampleModalLongTitle">This water sample is potable. Drink Away!</h4>
       </div>
-      <div class="modal-body">
-       Press "Continue" to examine another sample.
+      
+      <div class="modal-body" style="text-align: center ;">
+        <img src="happy.jpeg" class="img-fluid justify-content-center" style="height: 200px; width: 200px;" > 
+        <h5 class="modal-title" id="exampleModalLongTitle"> Press 'Continue' to test another sample.</h5>
+       
       </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" onclick="window.location.href = 'http://localhost:5000';">Continue</button>
       </div>
@@ -215,14 +249,15 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Unfortunately, this water sample is not potable. Be careful.</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h4 class="modal-title" id="exampleModalLongTitle"> Unfortunately, this water sample is not potable. Be careful.</h4>
       </div>
-      <div class="modal-body">
-        Press "Continue" to examine another sample.
+      
+      <div class="modal-body" style="text-align: center ;">
+        <img src="sad.jpeg" class="img-fluid justify-content-center" style="height: 200px; width: 200px;" > 
+        <h5 class="modal-title" id="exampleModalLongTitle"> Press 'Continue' to test another sample.</h5>
+       
       </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" onclick="window.location.href = 'http://localhost:5000';">Continue</button>
       </div>
